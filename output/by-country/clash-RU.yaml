@@ -6,8 +6,8 @@ log-level: info
 proxies:
 - name: 🇷🇺 俄罗斯 (Russia) 01 - xiaohe
   type: vless
-  server: 5.104.107.80
-  port: 2053
+  server: 194.154.29.139
+  port: 8443
   uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
   udp: true
   tls: true
@@ -15,21 +15,7 @@ proxies:
   servername: cdn8848.776676.xyz
   network: ws
   ws-opts:
-    path: /
-    headers:
-      Host: cdn8848.776676.xyz
-- name: 🇷🇺 俄罗斯 (Russia) 02 - xiaohe
-  type: vless
-  server: 188.130.207.30
-  port: 2053
-  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
-  udp: true
-  tls: true
-  skip-cert-verify: true
-  servername: cdn8848.776676.xyz
-  network: ws
-  ws-opts:
-    path: /
+    path: '%2Fretrieve%2Ftxt%3Fed%3D2560'
     headers:
       Host: cdn8848.776676.xyz
 proxy-groups:
@@ -38,13 +24,11 @@ proxy-groups:
   proxies:
   - AUTO
   - 🇷🇺 俄罗斯 (Russia) 01 - xiaohe
-  - 🇷🇺 俄罗斯 (Russia) 02 - xiaohe
 - name: AUTO
   type: url-test
   url: https://www.google.com/generate_204
   interval: 300
   proxies:
   - 🇷🇺 俄罗斯 (Russia) 01 - xiaohe
-  - 🇷🇺 俄罗斯 (Russia) 02 - xiaohe
 rules:
 - MATCH,PROXIES
