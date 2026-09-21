@@ -6,18 +6,17 @@ log-level: info
 proxies:
 - name: 🇪🇪 EE 01 - xiaohe
   type: vless
-  server: 5.101.115.117
-  port: 8443
-  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
+  server: 94.183.170.135
+  port: 443
+  uuid: 06c4e938-2954-478f-a870-ca1b163e30e9
   udp: true
-  tls: true
+  tls: false
   skip-cert-verify: true
-  servername: cdn8848.776676.xyz
   network: ws
   ws-opts:
     path: /
     headers:
-      Host: cdn8848.776676.xyz
+      Host: 94.183.170.135
 proxy-groups:
 - name: PROXIES
   type: select
