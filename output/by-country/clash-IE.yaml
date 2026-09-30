@@ -5,46 +5,23 @@ mode: rule
 log-level: info
 proxies:
 - name: 🇮🇪 IE 01 - xiaohe
-  type: vless
-  server: 172.67.222.62
+  type: ss
+  server: 20.123.34.66
   port: 443
-  uuid: ea50b1a3-3a98-4c5e-a150-48ada40d68d7
+  cipher: chacha20-ietf-poly1305
+  password: r5D6YOSrT6kC76ro
   udp: true
-  tls: true
-  skip-cert-verify: true
-  servername: cf-vless-4cf55824.aimall.fr
-  network: ws
-  ws-opts:
-    path: /connect
-    headers:
-      Host: cf-vless-4cf55824.aimall.fr
-- name: 🇮🇪 IE 02 - xiaohe
-  type: vless
-  server: 45.141.234.138
-  port: 443
-  uuid: fdc48be3-a615-41ac-8bd1-ed844c931048
-  udp: true
-  tls: true
-  skip-cert-verify: true
-  servername: edgetunnel-4uw.pages.dev
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: edgetunnel-4uw.pages.dev
 proxy-groups:
 - name: PROXIES
   type: select
   proxies:
   - AUTO
   - 🇮🇪 IE 01 - xiaohe
-  - 🇮🇪 IE 02 - xiaohe
 - name: AUTO
   type: url-test
   url: https://www.google.com/generate_204
   interval: 300
   proxies:
   - 🇮🇪 IE 01 - xiaohe
-  - 🇮🇪 IE 02 - xiaohe
 rules:
 - MATCH,PROXIES
